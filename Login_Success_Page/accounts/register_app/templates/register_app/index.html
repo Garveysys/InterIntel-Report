@@ -1,0 +1,47 @@
+{% block content %}
+
+{% load static %}
+
+
+<style>
+  .hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+  }
+</style>
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ <img src="{% static 'images/logo1.png' %}">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
+      </li>
+      
+    </ul>
+  </div>
+
+  <span class="hello-msg">Hello, {{request.user}}</span>
+  <span ><a  class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
+
+</nav>
+<br>
+    <div class="container" align="center" background="#efefef">
+        <h2>Welcome to GeeHub </h2>
+        <h4>Sign Up for more offers</h4>
+        <div class="mt-4">
+            <div class="d-flex justify-content-center links">
+                Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
+            </div>
+    
+        </div>
+    </div>
+    
+
+{% endblock %}

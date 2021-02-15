@@ -1,0 +1,15 @@
+
+
+<h1>Home Page</h1>
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<div class="jumbotron"> 
+    <form action="{% url 'search_results' %}" method="get" class="form-inline my-2 my-lg-0">
+        {{form}}
+    </form>
+</div>
+
+{% endblock %}  

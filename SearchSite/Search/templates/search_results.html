@@ -1,0 +1,15 @@
+<h1>Search Results</h1>
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<ul class="list-group">
+  {% for car in object_list %}
+    <li class="list-group-item">
+      {{ car.name }}, {{ car.brand }}
+    </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
